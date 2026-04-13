@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Warehouse implements Comparable<Warehouse>{
-    
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int warehouseId;
     private int supplierId;
     private String warehouseName;
@@ -18,7 +18,7 @@ public class Warehouse implements Comparable<Warehouse>{
     public Warehouse(int warehouseId, int supplierId, String wareHouseName, String location, int capacity) {
         this.warehouseId = warehouseId;
         this.supplierId = supplierId;
-        this.warehouseName = warehouseName;
+        this.warehouseName = wareHouseName;
         this.location = location;
         this.capacity = capacity;
     }
