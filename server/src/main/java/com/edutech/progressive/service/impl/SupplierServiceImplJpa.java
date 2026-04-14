@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
@@ -49,5 +50,8 @@ public class SupplierServiceImplJpa implements SupplierService{
     public Supplier getSupplierById(int supplierId) throws SQLException{
         return supplierRepository.findById(supplierId).get();
     }
+=======
+public class SupplierServiceImplJpa  {
+>>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 
 }

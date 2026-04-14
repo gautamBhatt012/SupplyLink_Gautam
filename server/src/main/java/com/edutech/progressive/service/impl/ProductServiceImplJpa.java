@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import java.sql.SQLException;
 import java.util.List;
 
@@ -40,5 +41,8 @@ public class ProductServiceImplJpa implements ProductService{
     }
 
     
+=======
+public class ProductServiceImplJpa  {
+>>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 
 }

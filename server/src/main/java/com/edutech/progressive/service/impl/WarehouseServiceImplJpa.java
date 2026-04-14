@@ -1,5 +1,6 @@
 package com.edutech.progressive.service.impl;
 
+<<<<<<< HEAD
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,4 +49,8 @@ public class WarehouseServiceImplJpa implements WarehouseService{
         return null;
     }
 
+=======
+public class WarehouseServiceImplJpa  {
+    
+>>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 }

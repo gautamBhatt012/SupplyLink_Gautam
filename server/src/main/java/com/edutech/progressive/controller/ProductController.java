@@ -2,11 +2,22 @@ package com.edutech.progressive.controller;
 
 import com.edutech.progressive.entity.Product;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 
 import java.util.List;
 
 public class ProductController {
 
+=======
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+@RestController
+@RequestMapping
+public class ProductController {
+    
+>>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
     public ResponseEntity<List<Product>> getAllProducts() {
         return null;
     }
@@ -30,4 +41,8 @@ public class ProductController {
     public ResponseEntity<List<Product>> getAllProductByWarehouse(int warehouseId) {
         return null;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
