@@ -1,8 +1,5 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
-public class WarehouseServiceImplJdbc  {
-=======
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
@@ -90,6 +87,5 @@ public class WarehouseServiceImplJdbc implements WarehouseService  {
     public List<Warehouse> getWarehouseBySupplier(int supplierId) {
         return null;
     }
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 
 }

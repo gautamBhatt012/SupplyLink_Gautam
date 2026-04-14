@@ -1,9 +1,5 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
-public class SupplierServiceImplJdbc  {
-=======
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -89,7 +85,5 @@ public List<Supplier> getAllSuppliersSortedByName() {
         return null;
     }
 
-    
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 
 }

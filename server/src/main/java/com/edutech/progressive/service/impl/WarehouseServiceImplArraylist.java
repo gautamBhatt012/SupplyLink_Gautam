@@ -1,8 +1,5 @@
 package com.edutech.progressive.service.impl;
 
-<<<<<<< HEAD
-public class WarehouseServiceImplArraylist  {
-=======
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -36,6 +33,5 @@ public class WarehouseServiceImplArraylist implements WarehouseService {
         warehouseList = new ArrayList<>();
     }
 
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
 
 }

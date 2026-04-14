@@ -1,6 +1,6 @@
 package com.edutech.progressive.repository;
 
-<<<<<<< HEAD
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,8 +16,4 @@ public interface SupplierRepository extends JpaRepository<Supplier, Integer>{
     @Query("SELECT s FROM Supplier s WHERE s.supplierId =:supplierId")
     Supplier findBySupplierId(@Param("supplierId") int supplierId);
 }
-=======
 
-public interface SupplierRepository {
-}
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8

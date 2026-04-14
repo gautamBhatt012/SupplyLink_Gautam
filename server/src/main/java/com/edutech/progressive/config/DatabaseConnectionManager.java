@@ -1,10 +1,7 @@
 package com.edutech.progressive.config;
 
-<<<<<<< HEAD
-public class DatabaseConnectionManager {
 
-}
-=======
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -46,4 +43,4 @@ public class DatabaseConnectionManager {
         return DriverManager.getConnection(url, user, password);
     }
 }
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
+

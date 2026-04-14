@@ -1,13 +1,5 @@
 package com.edutech.progressive.dao;
 
-<<<<<<< HEAD
-
-public class SupplierDAOImpl {
-
-
-
-}
-=======
 import com.edutech.progressive.config.DatabaseConnectionManager;
 import com.edutech.progressive.entity.Supplier;
 
@@ -135,4 +127,3 @@ public class SupplierDAOImpl implements SupplierDAO {
         return suppliers;
     }
 }
->>>>>>> 7b8b6b15b44f8033d0cf04f837bd056175fab3f8
