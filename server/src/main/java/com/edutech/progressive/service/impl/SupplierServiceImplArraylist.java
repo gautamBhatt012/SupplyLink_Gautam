@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.edutech.progressive.entity.Supplier;
 import com.edutech.progressive.service.SupplierService;
 
+@Service
 public class SupplierServiceImplArraylist implements SupplierService 
 {
     private static List<Supplier> supplierList = new ArrayList<>();
@@ -24,7 +27,7 @@ public class SupplierServiceImplArraylist implements SupplierService
 
     @Override
     public List<Supplier> getAllSuppliersSortedByName() {
-        List<Supplier> sortedSupplier = supplierList;
+        List<Supplier> sortedSupplier = new ArrayList<>(supplierList);
         sortedSupplier.sort(Comparator.comparing(Supplier::getSupplierName)); 
         return sortedSupplier;
     }
@@ -33,5 +36,4 @@ public class SupplierServiceImplArraylist implements SupplierService
     public void emptyArrayList() {
         supplierList = new ArrayList<>();
     }
-
 }

@@ -1,21 +1,29 @@
 package com.edutech.progressive.service.impl;
 
-
 import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.edutech.progressive.entity.Product;
 import com.edutech.progressive.repository.ProductRepository;
 import com.edutech.progressive.service.ProductService;
 
-public class ProductServiceImplJpa implements ProductService{
-    @Autowired
+@Service
+public class ProductServiceImplJpa implements ProductService {
+    
+    
     private ProductRepository productRepository;
 
+    
+    @Autowired
+    public ProductServiceImplJpa(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     @Override
-    public List<Product> getAllProducts() throws SQLException {
+    public List<Product> getAllProducts() throws SQLException{
         return productRepository.findAll();
     }
 
@@ -23,13 +31,14 @@ public class ProductServiceImplJpa implements ProductService{
     public Product getProductById(int productId) throws SQLException {
         return productRepository.findById(productId).get();
     }
-
+    
     @Override
     public int addProduct(Product product) throws SQLException {
-        Product p = productRepository.save(product);
-        return p.getProductId();
+        
+        Product savedProduct = productRepository.save(product);
+        return savedProduct.getProductId();
     }
-
+    
     @Override
     public void updateProduct(Product product) throws SQLException {
         productRepository.save(product);
@@ -39,6 +48,11 @@ public class ProductServiceImplJpa implements ProductService{
     public void deleteProduct(int productId) throws SQLException {
         productRepository.deleteById(productId);
     }
+
+    public List<Product> getAllProductByWarehouse(int warehouseId) throws SQLException{
+        return productRepository.findAllByWarehouse_WarehouseId(warehouseId);
+    }
+
 
 
 }
