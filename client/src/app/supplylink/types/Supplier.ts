@@ -1,5 +1,5 @@
 export class Supplier {
-  supplierId: number;
+  supplierId?: number;
   supplierName: string;
   email: string;
   phone: string;
@@ -9,7 +9,7 @@ export class Supplier {
   role?: string;
 
   constructor(
-    supplierId: number,
+    supplierId: number | undefined,
     supplierName: string,
     email: string,
     phone: string,
@@ -26,11 +26,5 @@ export class Supplier {
     this.username = username;
     this.password = password;
     this.role = role;
-  }
-
-  displayInfo(): void {
-    console.log(`Supplier ID : ${this.supplierId}`);
-    console.log(`Supplier name : ${this.supplierName}`);
-    console.log(`email : ${this.email}`);
   }
 }
