@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from '../../types/Product';
 import { Warehouse } from '../../types/Warehouse';
 import { Observable, of } from 'rxjs';
-//import { SupplyLinkService } from '../../services/supplylink.service';
+import { SupplyLinkService } from '../../services/supplylink.service';
 
 @Component({
     selector: 'app-product',
@@ -13,19 +13,19 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductComponent implements OnInit {
     productForm!: FormGroup;
-  //  warehouses: Observable<Warehouse[]>;
+    warehouses!: Observable<Warehouse[]>;
     productError: Observable<string> = of('');
     productSuccess: Observable<string> = of('');
     isFormSubmitted: boolean = false;
-   // userId: number;
+    userId!: number;
 
     constructor(
         private formBuilder: FormBuilder,
-     //   private supplyLinkService: SupplyLinkService
+        private supplyLinkService: SupplyLinkService
     ) { }
 
     ngOnInit() {
-     //   this.userId = Number(localStorage.getItem("user_id"));
+        this.userId = Number(localStorage.getItem("user_id"));
         this.productForm = this.formBuilder.group({
             warehouse: ["", Validators.required],
             productDescription: ["", Validators.required],
@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
             quantity: [null, [Validators.required, Validators.min(0)]],
             price: [null, [Validators.required, Validators.min(1)]],
         });
-     //   this.warehouses = this.supplyLinkService.getWarehousesBySupplier(this.userId);
+        this.warehouses = this.supplyLinkService.getWarehousesBySupplier(this.userId);
     }
 
     onSubmit() {
@@ -44,13 +44,13 @@ export class ProductComponent implements OnInit {
         if (this.productForm.invalid) {
             return;
         }
-        // this.supplyLinkService.addProduct(this.productForm.value).subscribe({
-        //     next: (response) => {
-        //         this.productSuccess = of("Product created successfully");
-        //         this.productForm.reset();
-        //         this.isFormSubmitted = false;
-        //     },
-        //     error: (error) => this.productError = of("Unable to create product")
-        // });
+        this.supplyLinkService.addProduct(this.productForm.value).subscribe({
+            next: (response) => {
+                this.productSuccess = of("Product created successfully");
+                this.productForm.reset();
+                this.isFormSubmitted = false;
+            },
+            error: (error) => this.productError = of("Unable to create product")
+        });
     }
 }
