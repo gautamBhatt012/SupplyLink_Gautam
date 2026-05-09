@@ -1,5 +1,5 @@
 export class Supplier {
-  supplierId?: number;
+  supplierId: number | undefined;
   supplierName: string;
   email: string;
   phone: string;
@@ -27,4 +27,11 @@ export class Supplier {
     this.password = password;
     this.role = role;
   }
+
+  // displayInfo() {
+  //   // Each log must be ONE formatted string with exact labels/casing
+  //   console.log(`Supplier ID: ${this.supplierId}`);
+  //   console.log(`Supplier name: ${this.supplierName}`);
+  //   console.log(`email: ${this.email}`);
+  // }
 }

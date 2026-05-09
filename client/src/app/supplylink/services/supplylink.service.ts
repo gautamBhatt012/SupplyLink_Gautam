@@ -10,8 +10,7 @@ import { Product } from "../types/Product";
   providedIn: "root",
 })
 export class SupplyLinkService {
- private baseUrl = `${environment.apiUrl}`;
- // private baseUrl= 'https://orchardsolveone.lntedutech.com/project/2279/proxy/3306/'
+  private baseUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) { }
 

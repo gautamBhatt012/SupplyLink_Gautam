@@ -10,9 +10,9 @@ import com.edutech.progressive.entity.Supplier;
 import com.edutech.progressive.service.SupplierService;
 
 @Service
-public class SupplierServiceImplArraylist implements SupplierService 
-{
-    private static List<Supplier> supplierList = new ArrayList<>();
+public class SupplierServiceImplArraylist implements SupplierService {
+
+    List<Supplier> supplierList = new ArrayList<>();
 
     @Override
     public List<Supplier> getAllSuppliers() {
@@ -27,7 +27,7 @@ public class SupplierServiceImplArraylist implements SupplierService
 
     @Override
     public List<Supplier> getAllSuppliersSortedByName() {
-        List<Supplier> sortedSupplier = new ArrayList<>(supplierList);
+        List<Supplier> sortedSupplier = supplierList;
         sortedSupplier.sort(Comparator.comparing(Supplier::getSupplierName)); 
         return sortedSupplier;
     }
@@ -36,4 +36,5 @@ public class SupplierServiceImplArraylist implements SupplierService
     public void emptyArrayList() {
         supplierList = new ArrayList<>();
     }
+
 }
