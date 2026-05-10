@@ -4,7 +4,7 @@
         <label for="warehouse">Warehouse :</label>
         <select formControlName="warehouse">
             <option value="">Select a Warehouse</option>
-            <option *ngFor="let warehouse of warehouses | async" [ngValue]="warehouse">
+            <option *ngFor="let warehouse of warehouses" [ngValue]="warehouse">
                 {{ warehouse.warehouseName }}
             </option>
         </select>

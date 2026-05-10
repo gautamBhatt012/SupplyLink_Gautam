@@ -13,7 +13,8 @@ import { SupplyLinkService } from '../../services/supplylink.service';
 })
 export class ProductComponent implements OnInit {
   productForm!: FormGroup;
-  warehouses!: Observable<Warehouse[]>;
+  warehouses!: Warehouse[];
+  
   productError: Observable<string> = of('');
   productSuccess: Observable<string> = of('');
   isFormSubmitted: boolean = false;
@@ -33,7 +34,7 @@ export class ProductComponent implements OnInit {
       quantity: [null, [Validators.required, Validators.min(0)]],
       price: [null, [Validators.required, Validators.min(1)]],
     });
-    this.warehouses = this.supplyLinkService.getWarehousesBySupplier(this.userId);
+    this.supplyLinkService.getWarehousesBySupplier(this.userId).subscribe(data=>this.warehouses =data);
   }
 
   onSubmit() {

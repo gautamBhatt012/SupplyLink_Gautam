@@ -12,8 +12,6 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { SharedModule } from "../shared/shared.module";
 import { SupplierEditComponent } from "./components/supplieredit/supplieredit.component";
 import { WarehouseEditComponent } from "./components/warehouseedit/warehouseedit.component";
-import { LoginComponent } from "../auth/components/login/login.component";
-import { LogoutComponent } from "../auth/components/logout/logout.component";
 
 @NgModule({
   declarations: [
@@ -22,8 +20,7 @@ import { LogoutComponent } from "../auth/components/logout/logout.component";
     WarehouseComponent,
     DashboardComponent,
     SupplierEditComponent,
-    WarehouseEditComponent,
-   
+    WarehouseEditComponent
   ],
   imports: [
     CommonModule,
