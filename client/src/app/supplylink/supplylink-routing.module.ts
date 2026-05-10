@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: "supplier", component: SupplierComponent },
   { path: "warehouse", component: WarehouseComponent },
   { path: "product", component: ProductComponent },
-  { path: "supplier/edit", component: SupplierEditComponent },
+  // { path: "supplier/edit", component: SupplierEditComponent },
+  { path: "supplier/edit/:supplierId", component: SupplierEditComponent },
   { path: "warehouse/edit", component: WarehouseEditComponent },
 ];
 

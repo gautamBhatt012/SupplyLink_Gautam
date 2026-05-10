@@ -71,11 +71,19 @@ export class DashboardComponent implements OnInit {
         });
     }
 
-    editSupplier(supplier: Supplier): void {
-        this.router.navigate(['/supplylink/supplier/edit', {
-            supplierId: supplier.supplierId, name: supplier.supplierName, email: supplier.email, username: supplier.username, password: supplier.password, role: supplier.role, phone: supplier.phone, address: supplier.address
-        }]);
+    // editSupplier(supplier: Supplier): void {
+    //     this.router.navigate(['/supplylink/supplier/edit', {
+    //         supplierId: supplier.supplierId, name: supplier.supplierName, email: supplier.email, username: supplier.username, password: supplier.password, role: supplier.role, phone: supplier.phone, address: supplier.address
+    //     }]);
 
+    // }
+
+    editSupplier(supplier: Supplier): void {
+
+        this.router.navigate([
+            '/supplylink/supplier/edit',
+            supplier.supplierId
+        ]);
     }
 
     deleteSupplier(supplier: any): void {

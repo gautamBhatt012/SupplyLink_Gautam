@@ -44,24 +44,47 @@ public class SupplierServiceImplJpa implements SupplierService {
         return result;
     }
 
-    public void updateSupplier(int supplierId, Supplier supplier) {
-        if (supplierRepository.findByUsername(supplier.getUsername()) != null) {
-            throw new SupplierAlreadyExistsException("Supplier Already exists");
-        }
-        Supplier updatedSupplier = supplierRepository.findBySupplierId(supplierId);
-        if (updatedSupplier != null) {
+    // public void updateSupplier(int supplierId, Supplier supplier) {
+    //     if (supplierRepository.findByUsername(supplier.getUsername()) != null) {
+    //         throw new SupplierAlreadyExistsException("Supplier Already exists");
+    //     }
+    //     Supplier updatedSupplier = supplierRepository.findBySupplierId(supplierId);
+    //     if (updatedSupplier != null) {
 
-            updatedSupplier.setSupplierName(supplier.getSupplierName());
-            updatedSupplier.setEmail(supplier.getEmail());
-            updatedSupplier.setPhone(supplier.getPhone());
-            updatedSupplier.setAddress(supplier.getAddress());
-            updatedSupplier.setUsername(supplier.getUsername());
-            updatedSupplier.setPassword(supplier.getPassword());
-            updatedSupplier.setRole(supplier.getRole());
-            supplierRepository.save(supplier);
-        }
+    //         updatedSupplier.setSupplierName(supplier.getSupplierName());
+    //         updatedSupplier.setEmail(supplier.getEmail());
+    //         updatedSupplier.setPhone(supplier.getPhone());
+    //         updatedSupplier.setAddress(supplier.getAddress());
+    //         updatedSupplier.setUsername(supplier.getUsername());
+    //         updatedSupplier.setPassword(supplier.getPassword());
+    //         updatedSupplier.setRole(supplier.getRole());
+    //         supplierRepository.save(supplier);
+    //     }
 
+    // }
+
+
+    public void updateSupplier(Supplier supplier) {
+
+    Supplier existingSupplier =
+            supplierRepository.findBySupplierId(supplier.getSupplierId());
+
+    if (existingSupplier == null) {
+        throw new SupplierDoesNotExistException("Supplier does not exist");
     }
+
+    existingSupplier.setSupplierName(supplier.getSupplierName());
+    existingSupplier.setEmail(supplier.getEmail());
+    existingSupplier.setPhone(supplier.getPhone());
+    existingSupplier.setAddress(supplier.getAddress());
+    existingSupplier.setUsername(supplier.getUsername());
+    existingSupplier.setPassword(supplier.getPassword());
+    existingSupplier.setRole(supplier.getRole());
+
+    supplierRepository.save(existingSupplier);
+}
+
+
 
     public void deleteSupplier(int supplierId) {
         supplierRepository.deleteById(supplierId);

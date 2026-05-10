@@ -19,7 +19,7 @@ export class SupplyLinkService {
   }
 
   editSupplier(supplier: Supplier): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/supplier/${supplier.supplierId}`, supplier);
+    return this.http.put(`${this.baseUrl}/supplier/${supplier.supplierId}`,supplier);
   }
 
   deleteSupplier(supplierId: number): Observable<any> {
