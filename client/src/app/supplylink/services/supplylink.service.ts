@@ -81,5 +81,4 @@ export class SupplyLinkService {
   getAllProductByWarehouse(warehouseId: number | null): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.baseUrl}/product/warehouse/${warehouseId}`);
   }
-
 }
